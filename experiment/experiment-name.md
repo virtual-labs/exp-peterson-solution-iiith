@@ -1,1 +1,1 @@
-## Experiment name
+## Peterson's Solution
