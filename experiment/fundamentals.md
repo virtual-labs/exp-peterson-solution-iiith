@@ -185,7 +185,6 @@ After execution, the process sets its `flag[]` to `false` to signal that the cri
 
 ### Code Example
 
-```c
 flag[0] = true;
 turn = 1;
 while (flag[1] && turn == 1);
