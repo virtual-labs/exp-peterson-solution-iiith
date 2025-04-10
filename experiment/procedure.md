@@ -2,35 +2,35 @@
 
 1. **Instructions Panel**
 
-1. Collapsible panel at the top of the simulation
-2. Contains step-by-step instructions for using the simulation
-3. Has an info button that provides additional context
+- Collapsible panel at the top of the simulation
+- Contains step-by-step instructions for using the simulation
+- Has an info button that provides additional context
 
 
 
 2. **Controls Panel**
 
-1. Located on the left side of the simulation
-2. Contains Start/Pause and Reset buttons
-3. Displays the currently selected process
-4. Includes a legend explaining the color coding
+- Located on the left side of the simulation
+- Contains Start/Pause and Reset buttons
+- Displays the currently selected process
+- Includes a legend explaining the color coding
 
 
 
 3. **Simulation Area**
 
-1. The central component showing the visual representation of Peterson's algorithm
-2. Contains Process 0 and Process 1 representations
-3. Shows the turn variable and critical section
-4. Displays alerts when errors or violations occur
+- The central component showing the visual representation of Peterson's algorithm
+- Contains Process 0 and Process 1 representations
+- Shows the turn variable and critical section
+- Displays alerts when errors or violations occur
 
 
 
 4. **Action Log**
 
-1. Located on the right side of the simulation
-2. Records all actions and state changes with timestamps
-3. Color-codes entries based on which process performed the action
+- Located on the right side of the simulation
+- Records all actions and state changes with timestamps
+- Color-codes entries based on which process performed the action
 
 
 
