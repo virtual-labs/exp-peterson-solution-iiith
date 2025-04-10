@@ -1,13 +1,3 @@
-## Introduction
-
-Peterson's Solution is a classic algorithm for achieving mutual exclusion in a multi-process environment. It was proposed by **Gary Peterson in 1981** as a solution for the **critical section problem** in concurrent programming. The problem arises when two or more processes need to access shared resources simultaneously. Without proper synchronization, **race conditions**, **data corruption**, and **inconsistent states** may occur.
-
-Peterson's Solution provides a simple and elegant way to ensure that only one process can enter the **critical section** at a time, using **shared variables** and **flags** to coordinate process execution.
-
-The simulation of Peterson's Solution in a virtual lab will help students understand how **mutual exclusion** is achieved at the process level using software-based synchronization without relying on complex hardware instructions.
-
----
-
 ## 1. Understanding the Key Elements of Peterson's Solution
 
 ### 1.1 Critical Section
@@ -162,35 +152,3 @@ In Peterson's Solution:
 - The `turn` variable guarantees fairness and prevents deadlock and starvation.
 
 ---
-
-## 6. How We Solve the Problem Using Peterson's Solution
-
-### Step 1: Set the Flag
-A process sets its `flag[]` value to `true` to indicate that it wants to enter the critical section.
-
-### Step 2: Set the Turn
-The process sets the `turn` variable to the other process's ID, giving it the chance to proceed if needed.
-
-### Step 3: Wait Until Safe
-The process checks the other process's `flag[]` and `turn` variable.  
-If the other process has higher priority (based on `turn`), the process waits.
-
-### Step 4: Enter Critical Section
-Once safe, the process enters the critical section and performs the necessary operations.
-
-### Step 5: Release the Lock
-After execution, the process sets its `flag[]` to `false` to signal that the critical section is free.
-
----
-
-### Code Example
-
-flag[0] = true;
-turn = 1;
-while (flag[1] && turn == 1);
-// Critical Section
-flag[0] = false;
-
-## 7. Conclusion
-
-Peterson's Solution elegantly handles the **mutual exclusion problem** using **shared variables** instead of hardware-based locking mechanisms. It prevents **race conditions**, ensures **mutual exclusion**, guarantees progress, and eliminates the possibility of **deadlock and starvation**. Through a virtual lab simulation, students can understand how Peterson's Solution provides a foundation for solving complex synchronization challenges in modern operating systems.
