@@ -186,7 +186,7 @@ Peterson’s Solution introduces two shared variables:
 
 ## Peterson’s Solution Code Example
 
-```c
+
 // Process A
 flag[0] = true;
 turn = 1;
@@ -220,10 +220,10 @@ flag[1] = false;
 | Problem          | Effect Without Synchronization                                             |
 |------------------|----------------------------------------------------------------------------|
 | Race Condition   | Both processes may modify the counter simultaneously, causing corruption.  |
-| Lost Update      | One process's changes may overwrite the other's.                          |
-| Deadlock         | Both processes may wait indefinitely.                                     |
-| Starvation       | One process may never get access to the critical section.                 |
-| Livelock         | Both processes may continuously retry without progress.                   |
+| Lost Update      | One process's changes may overwrite the other's.                           |
+| Deadlock         | Both processes may wait indefinitely.                                      |
+| Starvation       | One process may never get access to the critical section.                  |
+| Livelock         | Both processes may continuously retry without progress.                    |
 
 ---
 
@@ -231,11 +231,11 @@ flag[1] = false;
 
 | Problem          | How Peterson’s Solution Fixes It                                           |
 |------------------|----------------------------------------------------------------------------|
-| Race Condition   | Ensures only one process modifies the counter at a time.                  |
-| Lost Update      | Coordinates access to avoid overwrites.                                   |
-| Deadlock         | Uses `turn` variable to guarantee progress.                              |
-| Starvation       | Alternates access fairly between processes.                             |
-| Livelock         | Provides clear scheduling based on `turn` and `flag[]`.                   |
+| Race Condition   | Ensures only one process modifies the counter at a time.                   |
+| Lost Update      | Coordinates access to avoid overwrites.                                    |
+| Deadlock         | Uses `turn` variable to guarantee progress.                                |
+| Starvation       | Alternates access fairly between processes.                                |
+| Livelock         | Provides clear scheduling based on `turn` and `flag[]`.                    |
 
 ---
 
