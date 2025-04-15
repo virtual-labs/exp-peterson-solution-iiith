@@ -13,7 +13,7 @@ The **critical section** is the part of the code where shared resources are acce
 
 ### 1.2 Shared Variables
 
-Peterson's Solution relies on two shared variables for coordination between two processes:
+Peterson's Solution relies on two shared variables for coordination between two processes
 
 - `flag[]`: An array of boolean values used to indicate whether a process wants to enter the critical section.
 - `turn`: An integer value that indicates which process has the turn to enter the critical section.
@@ -52,7 +52,7 @@ Peterson's Solution relies on two shared variables for coordination between two 
 
 **Synchronization** refers to the mechanism that ensures that multiple processes or threads execute in a coordinated manner, particularly when accessing shared resources.
 
-In the context of Peterson's Solution, synchronization ensures that:
+In the context of Peterson's Solution, synchronization ensures that
 
 - Two processes do not enter the critical section at the same time.
 - A process waits if the other process is already using the shared resource.
@@ -134,21 +134,3 @@ The other process may keep waiting indefinitely → **Starvation**.
 
 ---
 
-## 5. Why We Need Synchronization
-
-Without proper synchronization, processes accessing shared resources simultaneously can lead to system instability and unpredictable results.
-
-**Example (Dining Philosophers Problem):**
-The Dining Philosophers Problem reflects similar challenges as Peterson's Solution:
-
-- Philosophers compete for limited resources (chopsticks).
-- Without synchronization:
-  - **Deadlock:** Philosophers may pick up one chopstick and wait indefinitely for the other.
-  - **Starvation:** One philosopher may continuously get chopsticks while others starve.
-  - **Race Condition:** Two philosophers may try to grab the same chopstick at once.
-
-In Peterson's Solution:
-- The `flag` array ensures that both processes declare their intent before proceeding.
-- The `turn` variable guarantees fairness and prevents deadlock and starvation.
-
----

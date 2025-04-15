@@ -1,3 +1,3 @@
 ### Aim of the experiment
 
-An interactive pedagogical tool designed to elucidate the logic and structure of **Peterson’s Solution**, illustrating how **mutual exclusion** and **progress** are achieved in concurrent processing environments using **shared memory variables**.
+To understand how **Peterson’s Solution** helps two processes take turns without interfering with each other by using **shared variables**, through an interactive simulation that shows how **mutual exclusion** and progress are maintained in a simple **concurrent system**.

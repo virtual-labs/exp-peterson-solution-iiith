@@ -19,25 +19,11 @@ In a multi-process system, the need for synchronization arises because multiple 
 
 A **race condition** occurs when two or more processes try to modify a shared resource at the same time, leading to inconsistent or unpredictable results.
 
-**Example:**
-
-- Process A reads a value `x = 5`.
-- Process B reads the same value `x = 5`.
-- Process A updates `x = 6`.
-- Process B updates `x = 7`.
-- **Expected result:** 7 → **Actual result may become:** 6 → **Data corruption**
-
 ---
 
 ### 2. Deadlock
 
 **Deadlock** happens when two processes hold resources and wait for each other to release them, resulting in both processes being permanently blocked.
-
-**Example:**
-
-- Process A holds a lock on Resource 1 and waits for Resource 2.
-- Process B holds a lock on Resource 2 and waits for Resource 1.
-- Both processes are stuck indefinitely → **Deadlock**
 
 ---
 
@@ -45,33 +31,17 @@ A **race condition** occurs when two or more processes try to modify a shared re
 
 **Starvation** happens when a high-priority process continuously prevents a low-priority process from accessing a resource.
 
-**Example:**
-
-- Process A has a higher priority and continuously acquires the lock.
-- Process B is lower priority and never gets a chance to execute → **Starvation**
-
 ---
 
 ### 4. Livelock
 
 **Livelock** happens when two or more processes keep responding to each other's actions without making any real progress.
 
-**Example:**
-
-- Process A and Process B both attempt to enter the critical section.
-- Both processes back off at the same time and try again simultaneously → **No actual progress**
-
 ---
 
 ### 5. Data Corruption
 
 If two processes modify the same data without coordination, the result may become invalid or unpredictable.
-
-**Example:**
-
-- Process A increments a shared counter.
-- Process B simultaneously increments the same counter.
-- The final value may reflect only one increment instead of two → **Data inconsistency**
 
 ---
 
@@ -165,7 +135,7 @@ If both processes keep attempting to update the counter but keep getting interru
 
 ## Why We Need Peterson’s Solution
 
-Peterson’s Solution introduces two shared variables:
+Peterson’s Solution introduces two shared variables
 
 - `flag[]` – Used by each process to declare its intent to enter the critical section.
 - `turn` – Used to determine which process should proceed if both processes want to enter the critical section at the same time.
@@ -174,13 +144,13 @@ Peterson’s Solution introduces two shared variables:
 
 ## How Peterson’s Solution Prevents These Issues
 
-| Problem          | How Peterson’s Solution Fixes It                                           |
-|------------------|----------------------------------------------------------------------------|
+| Problem          | How Peterson’s Solution Fixes It                                                 |
+|------------------|----------------------------------------------------------------------------------|
 | Race Condition   | `flag[]` and `turn` ensure that only one process modifies the counter at a time. |
-| Lost Update      | Proper handover using `turn` prevents overlapping updates.                 |
-| Deadlock         | The `turn` variable ensures one process always proceeds.                  |
-| Starvation       | The alternating use of `turn` ensures both processes get a chance.         |
-| Livelock         | The process that is not scheduled based on `turn` will back off and wait.  |
+| Lost Update      | Proper handover using `turn` prevents overlapping updates.                       |
+| Deadlock         | The `turn` variable ensures one process always proceeds.                         |
+| Starvation       | The alternating use of `turn` ensures both processes get a chance.               |
+| Livelock         | The process that is not scheduled based on `turn` will back off and wait.        |
 
 ---
 
