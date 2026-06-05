@@ -1,0 +1,165 @@
+{
+  "version": 2.0,
+    "questions": [
+      {
+        "question": "What are the two key elements of Peterson’s Solution?",
+        "options": {
+          "A": "Mutual exclusion and starvation",
+          "B": "Race conditions and memory allocation",
+          "C": "Flag variables and a turn variable",
+          "D": "CPU scheduling and paging"
+        },
+        "correct_answer": "C",
+        "explanation": {
+          "A": "Mutual exclusion and starvation are related to synchronization issues, but they are not the specific components of Peterson’s Solution.",
+          "B": "Race conditions and memory allocation are problems that Peterson’s Solution helps to address, but they are not the key elements of the algorithm.",
+          "C": "Peterson’s Solution relies on flag variables (to indicate process intent) and a turn variable (to enforce alternating access).",
+          "D": "CPU scheduling and paging are unrelated to process synchronization in Peterson’s Solution."
+        }
+      },
+      {
+        "question": "What ensures that Peterson’s Solution provides mutual exclusion?",
+        "options": {
+          "A": "The turn variable alone",
+          "B": "Both processes setting their flag to 'true'",
+          "C": "Checking both the flag and turn variable before entering the critical section",
+          "D": "Only allowing one process in the system"
+        },
+        "correct_answer": "C",
+        "explanation": {
+          "A": "The turn variable alone does not guarantee mutual exclusion.",
+          "B": "If both processes set their flags to true, the turn variable ensures only one process enters the critical section.",
+          "C": "Both conditions (flag and turn) must be satisfied before entering the critical section, ensuring mutual exclusion.",
+          "D": "Peterson’s Solution allows two processes, so this would not work."
+        }
+      },
+      {
+        "question": "Which of the following is a requirement for Peterson’s Solution to work correctly?",
+        "options": {
+          "A": "Process execution must be cooperative",
+          "B": "The system must use hardware locks",
+          "C": "Both processes must run on different processors",
+          "D": "The memory used for flag and turn variables must be shared"
+        },
+        "correct_answer": "D",
+        "explanation": {
+          "A": "Peterson’s Solution works independently of whether processes are cooperative.",
+          "B": "Peterson’s Solution is a software-based solution that does not require hardware locks.",
+          "C": "The processes can run on the same processor or different processors as long as shared memory is accessible.",
+          "D": "Peterson’s Solution relies on shared memory for communication between processes."
+        }
+      },
+      {
+        "question": "How does Peterson’s Solution ensure fairness?",
+        "options": {
+          "A": "By giving each process an equal chance to enter the critical section",
+          "B": "By allowing one process to dominate access",
+          "C": "By preventing both processes from entering the critical section",
+          "D": "By using priority scheduling"
+        },
+        "correct_answer": "A",
+        "explanation": {
+          "A": "The turn variable ensures that processes take turns, preventing starvation.",
+          "B": "Peterson’s Solution explicitly prevents one process from dominating access.",
+          "C": "Peterson’s Solution allows one process to enter the critical section at a time.",
+          "D": "Priority scheduling is not part of Peterson’s Solution."
+        }
+      },
+      {
+        "question": "Why does Peterson’s Solution fail on modern multi-core processors?",
+        "options": {
+          "A": "It consumes too much memory",
+          "B": "It relies on strict execution order, which is not guaranteed due to CPU optimizations",
+          "C": "It can only handle one process at a time",
+          "D": "It requires expensive hardware"
+        },
+        "correct_answer": "B",
+        "explanation": {
+          "A": "Peterson’s Solution does not consume excessive memory.",
+          "B": "Modern CPUs use out-of-order execution and cache coherence, which can disrupt Peterson’s assumptions.",
+          "C": "Peterson’s Solution can handle exactly two processes.",
+          "D": "Peterson’s Solution is software-based and does not require special hardware."
+        }
+      },
+      {
+        "question": "Which of the following is NOT an advantage of Peterson’s Solution?",
+        "options": {
+          "A": "It is simple and easy to implement",
+          "B": "It does not require special hardware",
+          "C": "It works well with multiple processes",
+          "D": "It provides mutual exclusion"
+        },
+        "correct_answer": "C",
+        "explanation": {
+          "A": "Peterson’s Solution is simple to implement in software.",
+          "B": "It works without relying on hardware features.",
+          "C": "Peterson’s Solution only works for two processes, not multiple processes.",
+          "D": "It ensures mutual exclusion between two processes."
+        }
+      },
+      {
+        "question": "What could happen if a process fails after setting its flag to 'true' in Peterson’s Solution?",
+        "options": {
+          "A": "The other process gets stuck waiting forever",
+          "B": "The system crashes",
+          "C": "The other process continues execution as usual",
+          "D": "The process restarts automatically"
+        },
+        "correct_answer": "A",
+        "explanation": {
+          "A": "If a process fails after setting its flag to true, the other process may wait indefinitely, leading to a deadlock-like situation.",
+          "B": "Peterson’s Solution does not cause system crashes.",
+          "C": "The other process will not continue unless the flag or turn condition changes.",
+          "D": "Process failure handling is not part of Peterson’s Solution."
+        }
+      },
+      {
+        "question": "What is the main drawback of busy waiting in Peterson’s Solution?",
+        "options": {
+          "A": "It allows processes to run faster",
+          "B": "It increases CPU utilization unnecessarily",
+          "C": "It improves system efficiency",
+          "D": "It reduces memory fragmentation"
+        },
+        "correct_answer": "B",
+        "explanation": {
+          "A": "Busy waiting increases CPU usage but does not make processes faster.",
+          "B": "Busy waiting wastes CPU cycles, making it inefficient.",
+          "C": "Busy waiting decreases system efficiency.",
+          "D": "Busy waiting has no effect on memory fragmentation."
+        }
+      },
+      {
+        "question": "How does Peterson’s Solution compare to modern synchronization techniques?",
+        "options": {
+          "A": "It is faster than hardware locks",
+          "B": "It is more efficient on multi-core processors",
+          "C": "It is outdated but useful for understanding process synchronization",
+          "D": "It is widely used in real-time operating systems"
+        },
+        "correct_answer": "C",
+        "explanation": {
+          "A": "Hardware locks are faster than Peterson’s Solution.",
+          "B": "Peterson’s Solution is inefficient on multi-core processors due to modern CPU optimizations.",
+          "C": "It is primarily used as a teaching tool for understanding synchronization.",
+          "D": "It is not suitable for real-time systems due to busy waiting."
+        }
+      },
+      {
+        "question": "Which alternative technique is more efficient than Peterson’s Solution for mutual exclusion?",
+        "options": {
+          "A": "Disk scheduling",
+          "B": "Monitors and mutex locks",
+          "C": "Virtual memory management",
+          "D": "File system indexing"
+        },
+        "correct_answer": "B",
+        "explanation": {
+          "A": "Disk scheduling is unrelated to mutual exclusion.",
+          "B": "Monitors and mutex locks are more efficient because they are hardware-supported.",
+          "C": "Virtual memory management is unrelated to mutual exclusion.",
+          "D": "File system indexing is not used for process synchronization."
+        }
+      }
+    ]  
+}

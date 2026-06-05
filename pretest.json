@@ -1,0 +1,175 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is Peterson’s Solution used for?",
+      "answers": {
+        "a": "Memory allocation",
+        "b": "Process synchronization",
+        "c": "Disk scheduling",
+        "d": "File management"
+      },
+      "explanations": {
+        "a": "Memory allocation involves assigning memory to processes, not synchronizing them.",
+        "b": "Peterson’s Solution is a software-based process synchronization algorithm used for achieving mutual exclusion in concurrent programming.",
+        "c": "Disk scheduling determines the order of disk I/O requests, not process synchronization.",
+        "d": "File management involves handling files, not process synchronization."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How many processes can Peterson’s Solution handle?",
+      "answers": {
+        "a": "Only one",
+        "b": "Exactly two",
+        "c": "Any number of processes",
+        "d": "More than three"
+      },
+      "explanations": {
+        "a": "Peterson’s Solution is designed for two processes, not one.",
+        "b": "Peterson’s Solution works only for two processes that need to access a shared resource.",
+        "c": "It does not support more than two processes simultaneously.",
+        "d": "Peterson’s Solution is not scalable to more than two processes."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What type of problem does Peterson’s Solution solve?",
+      "answers": {
+        "a": "Deadlock detection",
+        "b": "Mutual exclusion in concurrent processes",
+        "c": "CPU scheduling",
+        "d": "Buffer overflow"
+      },
+      "explanations": {
+        "a": "Deadlock detection is about identifying deadlocks, not preventing them through synchronization.",
+        "b": "Peterson’s Solution ensures that only one process enters its critical section at a time, maintaining mutual exclusion.",
+        "c": "CPU scheduling is about determining which process runs next, not about mutual exclusion.",
+        "d": "Buffer overflow occurs when data exceeds the storage buffer capacity, not a synchronization issue."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the main condition to achieve mutual exclusion?",
+      "answers": {
+        "a": "Both processes must enter the critical section simultaneously",
+        "b": "Only one process can enter the critical section at a time",
+        "c": "Both processes must wait indefinitely",
+        "d": "Any number of processes can enter the critical section"
+      },
+      "explanations": {
+        "a": "If both processes enter simultaneously, mutual exclusion is violated.",
+        "b": "Mutual exclusion ensures that only one process accesses the critical section at a time.",
+        "c": "Indefinite waiting causes starvation, not mutual exclusion.",
+        "d": "Allowing multiple processes in the critical section violates mutual exclusion."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the key mechanism used in Peterson’s Solution?",
+      "answers": {
+        "a": "Paging",
+        "b": "Virtual memory",
+        "c": "Flags and a turn variable",
+        "d": "Disk scheduling"
+      },
+      "explanations": {
+        "a": "Paging manages memory allocation, not process synchronization.",
+        "b": "Virtual memory provides an abstraction of memory, unrelated to mutual exclusion.",
+        "c": "Peterson’s Solution relies on two flags and a turn variable to control access to the critical section.",
+        "d": "Disk scheduling handles I/O operations, not process synchronization."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the purpose of the 'turn' variable in Peterson’s Solution?",
+      "answers": {
+        "a": "To indicate which process should enter the critical section next",
+        "b": "To allocate memory dynamically",
+        "c": "To prevent starvation",
+        "d": "To improve CPU scheduling"
+      },
+      "explanations": {
+        "a": "The turn variable ensures that processes take turns accessing the critical section, preventing race conditions.",
+        "b": "The turn variable does not control memory allocation.",
+        "c": "Starvation prevention requires fair scheduling, not just a turn variable.",
+        "d": "CPU scheduling determines which process runs next, not critical section access."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What problem does Peterson’s Solution prevent?",
+      "answers": {
+        "a": "Memory leaks",
+        "b": "Race conditions",
+        "c": "Fragmentation",
+        "d": "Deadlocks in distributed systems"
+      },
+      "explanations": {
+        "a": "Memory leaks are caused by poor memory management, not lack of mutual exclusion.",
+        "b": "Peterson’s Solution prevents race conditions by ensuring only one process accesses the critical section at a time.",
+        "c": "Fragmentation is a memory allocation problem, not a synchronization issue.",
+        "d": "Deadlocks in distributed systems require more complex handling than Peterson’s Solution."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What happens if both processes set their flag variables to 'true' at the same time?",
+      "answers": {
+        "a": "Both enter the critical section",
+        "b": "Neither can enter the critical section immediately",
+        "c": "One process enters and the other waits",
+        "d": "The system crashes"
+      },
+      "explanations": {
+        "a": "Mutual exclusion ensures only one process can enter at a time.",
+        "b": "The turn variable determines which process enters first, preventing deadlock.",
+        "c": "The turn variable ensures that one process enters and the other waits.",
+        "d": "The system will not crash due to Peterson’s Solution."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In what type of system is Peterson’s Solution commonly used?",
+      "answers": {
+        "a": "Multi-core processors",
+        "b": "Single-threaded applications",
+        "c": "Real-time systems",
+        "d": "Two-process systems"
+      },
+      "explanations": {
+        "a": "Peterson’s Solution is not suitable for multi-core processors due to modern CPU optimizations.",
+        "b": "Single-threaded applications do not require synchronization.",
+        "c": "Peterson’s Solution is not typically used in real-time systems.",
+        "d": "Peterson’s Solution is designed specifically for two processes."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is a limitation of Peterson’s Solution?",
+      "answers": {
+        "a": "It only works for more than two processes",
+        "b": "It requires hardware support",
+        "c": "It is inefficient on modern architectures due to CPU optimizations",
+        "d": "It cannot prevent deadlock"
+      },
+      "explanations": {
+        "a": "Peterson’s Solution works only for two processes, not more.",
+        "b": "Peterson’s Solution is software-based and does not rely on hardware.",
+        "c": "Modern CPUs use optimizations like cache coherence and instruction reordering, making Peterson’s Solution inefficient.",
+        "d": "Peterson’s Solution prevents deadlock between two processes."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    }
+  ]  
+}
